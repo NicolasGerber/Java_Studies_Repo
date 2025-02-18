@@ -1,23 +1,28 @@
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       String product1 = "Computer";
-       String product2 = "Office Desk";
-       int age = 30;
-       int code = 5290;
-       char gender =  'F';
-       double price1,price2,measure;
-       price1 = 2100.0;
-       price2 = 650.50;
-       measure = 53.234567;
-
-       System.out.printf("Products:%n%s, which price is $ %f%n%s, which price is $ %f%n",product1,price1,product2,price2);
-       System.out.printf("%nRecord: %d years old, code %d and gender: %c%n",age,code,gender);
-       System.out.printf("%nMeasure with eight decimal places: %.8f%n",measure);
-       System.out.printf("Rounded (three decimal places): %.3f%n",measure);
        Locale.setDefault(Locale.US);
-       System.out.printf("US decimal point: %.3f",measure);
+       Scanner sc = new Scanner(System.in);
+       double pi = 3.14159;
+       double a,b,c, area_tri,area_tra,area_qua,area_ret,area_cir;
+       a = sc.nextDouble();
+       b = sc.nextDouble();
+       c = sc.nextDouble();
 
+       area_tri = (a*c)/2;
+       area_cir = pi*(Math.pow(c,2));
+       area_tra = ((a+b)*c)/2;
+       area_qua = b*b;
+       area_ret = a*b;
+
+       System.out.printf("TRIANGULO: %.3f%n",area_tri);
+       System.out.printf("CIRCULO: %.3f%n", area_cir);
+       System.out.printf("TRAPEZIO: %.3f%n", area_tra);
+       System.out.printf("QUADRADO: %.3f%n", area_qua);
+       System.out.printf("RETANGULO: %.3f%n", area_ret);
+
+       sc.close();
     }
 }
