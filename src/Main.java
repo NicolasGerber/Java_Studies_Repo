@@ -3,26 +3,36 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       Locale.setDefault(Locale.US);
-       Scanner sc = new Scanner(System.in);
-       double pi = 3.14159;
-       double a,b,c, area_tri,area_tra,area_qua,area_ret,area_cir;
-       a = sc.nextDouble();
-       b = sc.nextDouble();
-       c = sc.nextDouble();
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        int total_gas = 0;
+        int total_alc = 0;
+        int total_die = 0;
 
-       area_tri = (a*c)/2;
-       area_cir = pi*(Math.pow(c,2));
-       area_tra = ((a+b)*c)/2;
-       area_qua = b*b;
-       area_ret = a*b;
+        int cod = sc.nextInt();
+        while (cod !=4){
+            switch (cod){
+                case 1:
+                    total_alc+=1;
+                    break;
+                case 2:
+                    total_gas+=1;
+                    break;
+                case 3:
+                    total_die+=1;
+                    break;
+                default:
+                    System.out.printf("CODIGO INVALIDO!%n");
 
-       System.out.printf("TRIANGULO: %.3f%n",area_tri);
-       System.out.printf("CIRCULO: %.3f%n", area_cir);
-       System.out.printf("TRAPEZIO: %.3f%n", area_tra);
-       System.out.printf("QUADRADO: %.3f%n", area_qua);
-       System.out.printf("RETANGULO: %.3f%n", area_ret);
+            }
+        cod = sc.nextInt();
 
-       sc.close();
+        }
+        System.out.printf("MUITO OBRIGADO!%n");
+        System.out.printf("ALCOOL : %d %n",total_alc);
+        System.out.printf("GASOLINA : %d %n",total_gas);
+        System.out.printf("DIESEL : %d %n",total_die);
+
+        sc.close();
     }
 }
