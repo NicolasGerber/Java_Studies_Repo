@@ -1,31 +1,25 @@
 package application;
 
-
-import entities.Employee;
-
+import entities.CurrencyConverter;
 import java.util.Locale;
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        Employee employee = new Employee();
+        CurrencyConverter converter = new CurrencyConverter();
 
-        System.out.print("Name: ");
-        employee.name = sc.nextLine();
-        System.out.print("Gross Salary: ");
-        employee.grossSalary = sc.nextDouble();
-        System.out.print("Tax: ");
-        employee.tax = sc.nextDouble();
+        System.out.println("What is the dollar cottation?");
+        double dollarCot = sc.nextDouble();
 
-        System.out.print(employee);
+        System.out.println("How many dollar will by bought?");
+        double dollarBuyAmount = sc.nextDouble();
 
-        System.out.println();
-        System.out.println("Which percentage to increase salary?");
-        double percentage = sc.nextDouble();
-        System.out.printf("Updated Data: %s, %.2f",employee.name,employee.IncreaseSalary(percentage));
+        System.out.printf("Amount to be paid in Reais = %.2f",CurrencyConverter.converter(dollarCot,dollarBuyAmount));
+
+
+
         sc.close();
     }
 }
